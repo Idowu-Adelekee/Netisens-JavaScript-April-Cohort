@@ -1,4 +1,4 @@
-/\*
+/
 // Naming a Variable
 i. Always use a camelCase
 ii. Don't start variable with uppercase
