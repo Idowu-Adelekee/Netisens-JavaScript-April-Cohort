@@ -137,7 +137,7 @@ const string = Number("13");
 
 console.log(typeof string);
 console.log(typeof number);
-*/
+
 
 const number = Number(prompt("What is your favourite number"));
 
@@ -152,3 +152,177 @@ if (number === 1) {
 } else {
   console.log(`Invalid number`);
 }
+
+
+
+// console.log(3 === 4);
+// console.log(3 !== 3);
+// console.log(3 !== 4);
+
+// // Not eqaul to operator
+// console.log(5 !== 5);
+
+// BOOLEAN LOGIC
+// AND
+// OR
+// NOT
+
+// AND Table
+// true AND true === true
+// true AND false === false
+// false AND true === false
+// false AND false === false
+
+// OR Table
+// True OR true === true
+// true OR false === true
+// false OR true === true
+// false OR false  === false
+
+// NOT (Inversion)
+// !true === false;
+// !false === true;
+
+// The syntanx
+// AND === &&
+// OR === ||
+// EXAMPLE
+
+const hasDriversLicense = true;
+const hasGoodVision = true;
+
+const isDrunk = false;
+
+// Combining AND
+console.log(hasDriversLicense && hasDriversLicense);
+console.log(hasDriversLicense && hasGoodVision);
+console.log(hasGoodVision && hasGoodVision);
+
+// Combining OR
+console.log(hasDriversLicense || hasDriversLicense);
+console.log(hasDriversLicense || hasGoodVision);
+console.log(hasGoodVision || hasGoodVision);
+
+if (hasDriversLicense && hasGoodVision && !isDrunk) {
+  console.log(`Mr. Lewis can drive`);
+} else {
+  console.log(`Mr. Lewis cannot drive`);
+}
+
+// const myName = "Idowu";
+// const myAge = 27;
+
+// if (!myName) console.log(`Idowu is his name`);
+// else console.log("His name is not Idowu");
+
+// Truthy and falsy values;
+
+// 5 falsy values
+// 1. Undefined;
+// 2. null
+// 3. 0
+// 4. '';
+// 5. NaN
+
+const zero = 0;
+const number = 4;
+
+if (zero) {
+  console.log("This is truthy value");
+} else {
+  console.log("This is falsy value");
+}
+
+
+
+// The Switch Statement
+const day = "monday";
+
+switch (day) {
+  case "Monday":
+    console.log("Go to the bank");
+    break;
+  case "tuesday":
+    console.log("Go to the market");
+    break;
+  case "wednesday":
+    console.log("Travel to village");
+    break;
+  case "thurday":
+    console.log("Go to the mall");
+    break;
+  case "friday":
+  case "saturday":
+    console.log("Go and party with friends");
+  case "sunday":
+    console.log("Go to Church");
+    break;
+  default:
+    console.log(`Not a valid day`);
+}
+
+const day2 = "january";
+
+if (day2 === "monday") {
+  console.log("Go to the bank");
+} else if (day2 === "tuesday") {
+  console.log("Go to the market");
+} else if (day2 === "wednesday") {
+  console.log("Travel to village");
+} else if (day === "thursday") {
+  console.log("Go to the mall");
+} else if (day2 === "friday" || day2 === "saturday") {
+  console.log("Party with friends");
+} else if (day2 === "sunday") {
+  console.log("Go to church");
+} else {
+  console.log("Not a valid day");
+}
+
+*/
+
+// Ternary operator
+const school = "Uniuyo";
+
+const illiterate = school ? `I went to ${school}` : `I didn't go to ${school}`;
+
+console.log(illiterate);
+
+// Statement and Expression
+// 23 false undefined;
+23;
+const number = 23;
+
+const firstName = "Lewis";
+const lastName = "Isang";
+const gender = 1;
+
+const whoIsHe = `His name is ${firstName} ${lastName}, and he's ${
+  2025 - 2001
+}. He is a ${gender ? "Man" : "Woman"}`;
+
+console.log(whoIsHe);
+
+// DRY === DON'T REPEAT YOURSELF
+
+// LOOP
+// console.log("Lifting weight repetition 1");
+// console.log("Lifting weight repetition 2");
+// console.log("Lifting weight repetition 3");
+// console.log("Lifting weight repetition 4");
+// console.log("Lifting weight repetition 4");
+// console.log("Lifting weight repetition 6");
+// console.log("Lifting weight repetition 7");
+// console.log("Lifting weight repetition 8");
+// console.log("Lifting weight repetition 9");
+// console.log("Lifting weight repetition 10");
+
+// The for loop has 3 parts, the initial value, the condition and counter;
+
+console.log("_____Using Loop____");
+for (let rep = 5; rep <= 10; rep++) {
+  console.log(`Lifting weight repetition ${rep}`);
+}
+
+// ASSIGNMENT
+// Create a loop inside of a loop, by repeting 5 repetition inside of 3 set of exercises, e.g. 5 reps inside the first exercise, 5 reps inside the second exercise and 5 reps inside the third exercise.
