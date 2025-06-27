@@ -212,8 +212,8 @@ if (hasDriversLicense && hasGoodVision && !isDrunk) {
 // const myName = "Idowu";
 // const myAge = 27;
 
-// if (!myName) console.log(`Idowu is his name`);
-// else console.log("His name is not Idowu");
+// if (!myName) console.log(`Idowu is his name`)
+// else console.log("His name is not Idowu")
 
 // Truthy and falsy values;
 
@@ -317,7 +317,7 @@ console.log(whoIsHe);
 // console.log("Lifting weight repetition 9");
 // console.log("Lifting weight repetition 10");
 
-// The for loop has 3 parts, the initial value, the condition and counter;
+// The for loop has 3 parts, the initial value, the condition and the counter;
 
 console.log("_____Using Loop____");
 for (let rep = 5; rep <= 10; rep++) {
