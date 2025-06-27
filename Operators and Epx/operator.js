@@ -279,7 +279,7 @@ if (day2 === "monday") {
   console.log("Not a valid day");
 }
 
-*/
+
 
 // Ternary operator
 const school = "Uniuyo";
@@ -319,10 +319,49 @@ console.log(whoIsHe);
 
 // The for loop has 3 parts, the initial value, the condition and the counter;
 
-console.log("_____Using Loop____");
-for (let rep = 5; rep <= 10; rep++) {
-  console.log(`Lifting weight repetition ${rep}`);
-}
+// console.log("_____Using Loop____");
+// for (let rep = 5; rep <= 10; rep++) {
+//   console.log(`Lifting weight repetition ${rep}`);
+// }
 
 // ASSIGNMENT
 // Create a loop inside of a loop, by repeting 5 repetition inside of 3 set of exercises, e.g. 5 reps inside the first exercise, 5 reps inside the second exercise and 5 reps inside the third exercise.
+
+*/
+// for (let i = 1; i <= 3; i++) {
+//   console.log(`Exercise ${i}`);
+
+//   for (let i = 1; i <= 5; i++) {
+//     console.log(`Lifting weight repetition ${i}`);
+//   }
+// }
+
+// for (let i = 10; i <= 10; i--) {
+//   console.log(`Lifting weight repetition ${i}`);
+// }
+
+// for (let i = 10; i >= 1; i--) {
+//   console.log(`Lifting weight repetition ${i}`);
+// }
+
+// Using the while loop
+let i = 1;
+while (i <= 5) {
+  console.log(`Lifting weight repetition ${i}`);
+
+  i++;
+}
+
+let randomNumber = Math.trunc(Math.random() * 6 + 1);
+console.log(randomNumber);
+
+while (randomNumber !== 6) {
+  console.log(`You rolled a ${randomNumber}`);
+
+  randomNumber = Math.trunc(Math.random() * 6 + 1);
+}
+
+for (let i = 1; i <= 10; i++) {
+  if (i === 7) break;
+  console.log(`lifting weight repetition ${i}`);
+}

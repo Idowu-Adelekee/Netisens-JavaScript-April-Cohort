@@ -14,7 +14,7 @@ console.log(ageJonas, ageSarah);
 console.log(ageJonas _ 2, ageJonas / 10, 2 ** 3);
 // 2 ** 3 means 2 _ 2 _ 2 _ 2 which means 2 raise to power of 3
 
-// We can also use addition to concertenate string
+// We can also use addition to concatenate string
 const firstName = "Jonas";
 const lastName = "Schmedtmann";
 
@@ -381,5 +381,5 @@ Note: the loop keep running while the condition is true.
 
 console.log("**\_\_\_\_**The for Loop\***\*\_\_\_\*\***");
 for (let rep = 1; rep <= 10; rep++) {
-console.log(`Lifting weights repetition ${rep}`);
+<!-- console.log(`Lifting weights repetition ${rep}`); -->
 }
