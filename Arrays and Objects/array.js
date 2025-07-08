@@ -4,6 +4,8 @@ console.log("check in");
 // const aboutLewis = 'Lewis';
 // const lewisAge = ''
 
+/*
+
 const aboutLewis = [
   "Lewis",
   "Isang",
@@ -100,3 +102,80 @@ const aboutOdudu = {
 };
 
 console.log(aboutOdudu);
+
+
+const aboutKhadija = {
+  firstName: "Khadija",
+  lastName: "Bello",
+  birthYear: 2002,
+  state: "Oyo",
+  LGA: "Ogbomosho North",
+  friends: ["Bigfish", "Chizzy", "Lewis", "id"],
+  calcAge: function () {
+    this.age = 2025 - this.birthYear;
+    return 2025 - this.birthYear;
+  },
+};
+
+// console.log(aboutKhadija);
+
+// // Getting values from an object
+// // Using: 1. Dot, 2. []
+
+// console.log(aboutKhadija.firstName);
+// const khadijaFirstName = aboutKhadija.firstName;
+// console.log(khadijaFirstName);
+// console.log(aboutKhadija.friends);
+// console.error("This is an error");
+
+// console.log(aboutKhadija.calcAge());
+
+// console.log(aboutKhadija["firstName"]);
+
+// console.log(aboutKhadija["firstName"]);
+
+// const nameRep = "Name";
+// console.log(aboutKhadija["first" + nameRep]);
+// console.log(aboutKhadija["last" + nameRep]);
+
+// aboutKhadija.age = 2025 - 2002;
+
+aboutKhadija.calcAge();
+console.log(aboutKhadija);
+console.log(aboutKhadija.age);
+
+// console.log(this);
+*/
+
+const aboutKhadija = {
+  firstName: "Khadija",
+  lastName: "Bello",
+  birthYear: 2002,
+  state: "Oyo",
+  LGA: "Ogbomosho North",
+  friends: ["Bigfish", "Chizzy", "Lewis", "id"],
+  calcAge: function () {
+    this.age = 2025 - this.birthYear;
+    return 2025 - this.birthYear;
+  },
+};
+
+const aboutOdudu = {
+  firstName: "Odudu",
+  lastName: "Essien",
+  birthYear: 2005,
+  state: "Akwa-Ibom",
+  LGA: "Uyo",
+  friens: ["Munachi", "Mr. Barry", "Idowu"],
+};
+
+// console.log(aboutOdudu.calcAge());
+// aboutOdudu.age = 2025 - 2005;
+// console.log(aboutOdudu);
+
+aboutOdudu.calcAge = aboutKhadija.calcAge;
+console.log(aboutOdudu);
+
+// The this keyword is equal an object calling the function.
+console.log(aboutKhadija.calcAge());
+console.log(aboutOdudu.calcAge());

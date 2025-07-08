@@ -1,0 +1,50 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-direction: column;
+  background-color: #1e68b1;
+}
+
+.heading-primary {
+  text-align: center;
+  color: white;
+}
+
+#about-dom {
+  font-size: 24px;
+  color: aliceblue;
+}
+
+.btn {
+  padding: 16px 30px;
+  color: orange;
+  background-color: #fff;
+  border-radius: 9px;
+  outline: none;
+  text-decoration: none;
+  font-size: 24px;
+}
