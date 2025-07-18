@@ -25,14 +25,14 @@ console.log("check in");
 //   console.log(this);
 // });
 
-const allButtons = document.querySelectorAll(".show-modal");
-console.log(allButtons);
+// const allButtons = document.querySelectorAll(".show-modal");
+// console.log(allButtons);
 
-for (let i = 0; i < allButtons.length; i++) {
-  allButtons[i].addEventListener("click", function () {
-    console.log("Helllooo");
-  });
-}
+// for (let i = 0; i < allButtons.length; i++) {
+//   allButtons[i].addEventListener("click", function () {
+//     console.log("Helllooo");
+//   });
+// }
 
 // // SELECTING ELEMENTS
 // const btnShowModal = document.querySelectorAll(".show-modal");

@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
-
 *:root {
   --background-color-win: #36b16d;
   --background-color-default: #222;
@@ -18,7 +16,7 @@ html {
 
 body {
   font-family: sans-serif;
-  color: #101010;
+  color: var(--background-color-default);
   background-color: EEEEFF;
 }
 
@@ -119,10 +117,6 @@ h1 {
     background-color: #030e3f;
     color: #162647;
   }
-}
-
-.btn:hover {
-  background-color: #ccc;
 }
 
 .message {
