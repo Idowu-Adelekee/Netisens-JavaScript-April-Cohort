@@ -1,5 +1,5 @@
 *:root {
-  --background-color-win: #36b16d;
+  --background-color-win: #48a371;
   --background-color-default: #222;
 }
 
@@ -111,10 +111,11 @@ h1 {
   font-family: inherit;
   padding: 2rem 3rem;
   cursor: pointer;
-  transition: all 0.3s ease-out;
+  transition: all 0.1s ease-out;
 
-  &::hover {
-    background-color: #030e3f;
+  &:hover {
+    background-color: #a6b6fc;
+    border: #a6b6fc;
     color: #162647;
   }
 }
