@@ -1,7 +1,25 @@
 "use strict";
 
+const openingHours = {
+  thu: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 9,
+    close: 23,
+  },
+  sat: {
+    open: 8,
+    clos: 10,
+  },
+};
+
+const location2 = "No. 34 Oron Road, Uyo Akwa-Ibom";
+
 const restaurant = {
   name: "Udy Pot",
+  location2,
   ibibioSoup: [
     "Afang",
     "Editan",
@@ -15,50 +33,172 @@ const restaurant = {
   hausaSoup: ["Wake", "Zogale", "Miyan", "Taushe"],
   swallow: ["Garri", "Fufu", "Semovita", "Amala", "Pounded Yam"],
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 9,
-      close: 23,
-    },
-    sat: {
-      open: 8,
-      clos: 10,
-    },
-  },
+  openingHours,
 
-  orderIbibioMeal: function (first, second) {
+  orderIbibioMeal(first, second) {
     return [this.ibibioSoup[first], this.swallow[second]];
   },
+
+  orderYorubaMeal({ location, time, yorubaSoup, swallow }) {
+    console.log(
+      `Order recieved, ${this.yorubaSoup[yorubaSoup]} and ${this.swallow[swallow]} will be delivered at ${location} by ${time}pm`
+    );
+  },
 };
+
+// console.log(restaurant?igalaSoup?.['Ewedu']);
+// const [soup, swallow] = restaurant?.orderIgalaMeal(0, 1);
+
+// const rest1 = {
+//   name: "Noble Pot",
+//   location: "Uyo",
+// };
+// console.log(rest1.nam);
+
+// console.log(soup, swallow);
+
+// console.log(restaurant.yorubaSoup[0]);
+
+// THE REST PATTERN
+const [name, nameLocation, ...yorubaSoup] = [
+  restaurant.name,
+  restaurant.location2,
+  ...restaurant.yorubaSoup,
+];
+
+console.log(name, nameLocation, yorubaSoup);
+
+const isItTrue = true || false || false || true || !true;
+
+const isItFalse = true && false && false && true && !true;
+
+console.log(isItTrue, isItFalse);
+
+// Return, recive any data types and they do short circuiting
+
+// The (||) or operator return the first found truthy value but return the last falsy value if there is no truthy value;
+const richMan = "Money" || "noMoney" || undefined || 0;
+
+const richMan2 = 0 || false || undefined || 0 || null;
+
+const richMan3 = null || 0 || "money" || undefined;
+
+console.log(richMan);
+console.log(richMan2);
+console.log(richMan3);
+
+/// AND
+
+// The (&&) AND operator return the first found falsy value but return the last truthy value if there is no falsy value;
+
+const averageMan = "Money" && "noMoney" && undefined && 0;
+
+const averageMan2 = 0 && false && undefined && 0 && null;
+
+const averageMan3 = 2 && [3, 4] && "money" && true;
+
+console.log(averageMan, averageMan2, averageMan3);
+
+// const number = [2, 3, 4, 5, 6, 7, 8, 9];
+
+// const [firstNumber, ...otherNumbers] = number;
+
+// console.log(firstNumber, otherNumbers);
+
+// THE SPREAD OPERATOR
+// const number = [2, 3, 4, 5, 6];
+
+// const completeNumber = [number[0], number[1], number[2], 8, 9, 10];
+
+// const completeNumber = [...number, 7, 8, 9, 10];
+
+// console.log(completeNumber);
+
+// const allUdyPotSoup = [
+//   ...restaurant.ibibioSoup,
+//   ...restaurant.yorubaSoup,
+//   ...restaurant.igboSoup,
+//   ...restaurant.hausaSoup,
+// ];
+
+// console.log(allUdyPotSoup);
+
+// let firstName = "Odudu";
+// console.log("O", "d", "u", "d", "u");
+// console.log(...firstName);
+
+// restaurant.orderYorubaMeal({
+//   location: "Atiku",
+//   time: 8,
+//   swallow: 0,
+//   yorubaSoup: 2,
+// });
 
 // console.log("Hi");
 // console.error("You are an error");
 
-// DESTRUCTURING ASSIGNMENT
+// DESTRUCTURING ASSIGNMENT\
+// Destructuring object: unpacking object and store into new variables
+
+// Nested Destructuring
+// restaurant.orderYorubaMeal({
+//   location: "Atiku",
+//   time: 8,
+//   swallow: 0,
+//   yorubaSoup: 2,
+// });
+
+// const {
+//   thu: { open: thuOpenHrs },
+//   fri: secondDay,
+//   sat: thirdDay,
+// } = restaurant.openingHours;
+
+// console.log(thuOpenHrs, secondDay, thirdDay);
+
 // Destructuring arrays: unpacking array and store into new variables
-const [soup, swallow] = restaurant.orderIbibioMeal(0, 1);
-console.log(soup, swallow);
+// const [soup, swallow] = restaurant.orderIbibioMeal(0, 1);
+// console.log(soup, swallow);
 
-const number = [2, 3, 4, 5, 6, [7, 8], 9, 10];
+// const number = [2, 3, 4, 5, 6, [7, 8], 9, 10];
 
-console.log(restaurant.ibibioSoup);
-// Dinosaur way of doing this.
-const number2 = number[0];
-const number3 = number[1];
-console.log(number2, number3);
+// const bigFish2 = number[0];
+// const bigFish3 = number[1];
+// const bigFish5 = number[3];
+// const bigFish7 = number[5][0];
 
-const [odudu, numberThree, , numberFive, , [, numberEight]] = number;
+// console.log(bigFish2, bigFish3, bigFish5, bigFish7);
 
-let [lewisPeopleSoup, , OduduPeopleSoup] = restaurant.ibibioSoup;
-console.log(lewisPeopleSoup, OduduPeopleSoup);
+// const [smallFish2, smallFish3, , smallFish5, , [smallFish7]] = number;
 
-console.log(odudu, numberThree, numberFive, numberEight);
+// console.log(smallFish2, smallFish3, smallFish5, smallFish7);
 
-console.log(lewisPeopleSoup, OduduPeopleSoup);
+// const emmanueltwo = number[0];
+// console.log(emmanueltwo);
+
+// const [numberTwo, numberThree, , fiveDigit, , []] = number;
+// console.log(numberTwo, numberThree, fiveDigit);
+
+// const [eba, akpu] = restaurant.swallow;
+
+// const [courseRep, assCourseRep] = ["Lewis", "Khadija"];
+// console.log(courseRep, assCourseRep);
+
+// console.log(eba, akpu);
+// console.log(restaurant.ibibioSoup);
+// // Dinosaur way of doing this.
+// const number2 = number[0];
+// const number3 = number[1];
+// console.log(number2, number3);
+
+// const [odudu, numberThree, , numberFive, , [, numberEight]] = number;
+
+// let [lewisPeopleSoup, , OduduPeopleSoup] = restaurant.ibibioSoup;
+// console.log(lewisPeopleSoup, OduduPeopleSoup);
+
+// console.log(odudu, numberThree, numberFive, numberEight);
+
+// console.log(lewisPeopleSoup, OduduPeopleSoup);
 
 // let tempSoup = OduduPeopleSoup;
 // lewisPeopleSoup = tempSoup;
@@ -71,5 +211,5 @@ console.log(lewisPeopleSoup, OduduPeopleSoup);
 
 // console.log(lewisPeopleSoup, OduduPeopleSoup);
 
-[lewisPeopleSoup, OduduPeopleSoup] = [OduduPeopleSoup, lewisPeopleSoup];
-console.log(lewisPeopleSoup, OduduPeopleSoup);
+// [lewisPeopleSoup, OduduPeopleSoup] = [OduduPeopleSoup, lewisPeopleSoup];
+// console.log(lewisPeopleSoup, OduduPeopleSoup);
