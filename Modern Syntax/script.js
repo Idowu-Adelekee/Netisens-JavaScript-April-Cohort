@@ -46,6 +46,120 @@ const restaurant = {
   },
 };
 
+// map Method
+const moneyMovementsUSD = [2000, 4000, -3500, 9000, -200, 1300];
+
+const dollarRate = 1600;
+
+// const nairaMovements = moneyMovementsUSD.map(function (mov, i) {
+//   return mov * dollarRate;
+// });
+const nairaMovements = moneyMovementsUSD.map((mov, i) => mov * dollarRate);
+
+console.log(nairaMovements);
+
+const depositMovements = moneyMovementsUSD.filter((mov) => mov < 0);
+console.log(depositMovements);
+
+const allMovements = moneyMovementsUSD.reduce(function (acc, mov, i, arr) {
+  return acc + mov;
+});
+
+console.log(allMovements);
+
+// Assignment: Use the reduce method to find the biggest number in the moneyMovementsUSD array
+
+// forEach
+// Side effect
+// const moneyMovements = [2000, 4000, -3500, 9000, -200, 1300];
+
+// moneyMovements.forEach(function (mov, i, arr) {
+//   if (mov > 0) {
+//     console.log(mov);
+//   }
+
+//   console.log(
+//     `At movement ${i + 1}, You ${mov > 0 ? "deposit" : "withdrawal"} ${Math.abs(
+//       mov
+//     )}`
+//   );
+
+//   return mov;
+// });
+
+// THE FOR OF LOOP
+// const moneyMovements = [2000, 4000, -3500, 9000, -200, 1300];
+
+// for (let i = 0; i < moneyMovements.length; i++) console.log(moneyMovements[i]);
+
+// console.log("___For of Loop");
+// for (const [i, mov] of moneyMovements.entries()) {
+//   console.log(
+//     `At movement ${i + 1}, You ${mov > 0 ? "deposit" : "withdrawal"} ${Math.abs(
+//       mov
+//     )}`
+//   );
+// }
+
+// ARROW FUNCTION REVIEW
+
+// const helloMachine = function (greet, firstName) {
+//   return `Hello ${greet}, I'm ${firstName}`;
+// };
+
+// const gretter = helloMachine("everyone", "Idowu");
+// console.log(gretter);
+
+// const helloMachine2 = (greet, firstName) => {
+//   console.log(`Hey ${firstName}`);
+//   return `Hello ${greet}, I'm ${firstName}`;
+// };
+
+// const gretter2 = helloMachine2("everybody", "Lewis");
+// console.log(gretter2);
+
+// console.log(...moneyMovements.entries());
+
+// THE SPLICE METHOD
+
+// const names = ["Lewis", "Mr. Barry", "Odudu", "Khadija", "Bigfish"];
+
+// console.log(names.splice(2, 3));
+// // console.log(names);
+// // console.log(names.splice(-1));
+// console.log(names);
+
+// THE SLICE METHOD
+// const number = [2, 3, 4, 5, 6, 7, 8];
+// console.log(number.slice(1, 5));
+// console.log(number.slice(2));
+
+// const [soup, swallow] = [
+//   ...restaurant.yorubaSoup.slice(-1),
+//   ...restaurant.swallow.slice(-1),
+// ];
+// console.log(soup, swallow);
+
+// console.log(...number);
+
+// OPTIONAL CHAINING
+// console.log(restaurant.openingHours.fri.open);
+// // console.log(restaurant.openingHours.mon.open);
+
+// // console.log(restaurant.orderIgboMeal?.(4, 8));
+
+// const [soup, swallow] = restaurant.orderIbibioMeal?.(2, 3);
+// const soup2 = restaurant.orderHausaMeal?.();
+// console.log(soup2);
+
+// console.log(soup, swallow);
+
+// if (restaurant.orderHausaMeal) {
+//   console.log(restaurant.orderHausaMeal());
+// } else {
+//   console.log(`There is no hausa meal here`);
+// }
+
 // console.log(restaurant?igalaSoup?.['Ewedu']);
 // const [soup, swallow] = restaurant?.orderIgalaMeal(0, 1);
 
@@ -60,44 +174,44 @@ const restaurant = {
 // console.log(restaurant.yorubaSoup[0]);
 
 // THE REST PATTERN
-const [name, nameLocation, ...yorubaSoup] = [
-  restaurant.name,
-  restaurant.location2,
-  ...restaurant.yorubaSoup,
-];
+// const [name, nameLocation, ...yorubaSoup] = [
+//   restaurant.name,
+//   restaurant.location2,
+//   ...restaurant.yorubaSoup,
+// ];
 
-console.log(name, nameLocation, yorubaSoup);
+// console.log(name, nameLocation, yorubaSoup);
 
-const isItTrue = true || false || false || true || !true;
+// const isItTrue = true || false || false || true || !true;
 
-const isItFalse = true && false && false && true && !true;
+// const isItFalse = true && false && false && true && !true;
 
-console.log(isItTrue, isItFalse);
+// console.log(isItTrue, isItFalse);
 
 // Return, recive any data types and they do short circuiting
 
 // The (||) or operator return the first found truthy value but return the last falsy value if there is no truthy value;
-const richMan = "Money" || "noMoney" || undefined || 0;
+// const richMan = "Money" || "noMoney" || undefined || 0;
 
-const richMan2 = 0 || false || undefined || 0 || null;
+// const richMan2 = 0 || false || undefined || 0 || null;
 
-const richMan3 = null || 0 || "money" || undefined;
+// const richMan3 = null || 0 || "money" || undefined;
 
-console.log(richMan);
-console.log(richMan2);
-console.log(richMan3);
+// console.log(richMan);
+// console.log(richMan2);
+// console.log(richMan3);
 
 /// AND
 
 // The (&&) AND operator return the first found falsy value but return the last truthy value if there is no falsy value;
 
-const averageMan = "Money" && "noMoney" && undefined && 0;
+// const averageMan = "Money" && "noMoney" && undefined && 0;
 
-const averageMan2 = 0 && false && undefined && 0 && null;
+// const averageMan2 = 0 && false && undefined && 0 && null;
 
-const averageMan3 = 2 && [3, 4] && "money" && true;
+// const averageMan3 = 2 && [3, 4] && "money" && true;
 
-console.log(averageMan, averageMan2, averageMan3);
+// console.log(averageMan, averageMan2, averageMan3);
 
 // const number = [2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -213,3 +327,22 @@ console.log(averageMan, averageMan2, averageMan3);
 
 // [lewisPeopleSoup, OduduPeopleSoup] = [OduduPeopleSoup, lewisPeopleSoup];
 // console.log(lewisPeopleSoup, OduduPeopleSoup);
+
+// CLASSWORK
+
+// const addNumbers = function (numbers) {
+//   console.log(numbers);
+
+//   // Add each element of the numbers array together
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) {
+//     sum += numbers[i];
+//   }
+
+//   console.log(sum);
+// };
+
+// addNumbers([2, 3]);
+// addNumbers([2, 4, 8, 9]);
+// addNumbers([20, 30, 40]);
+// addNumbers([38, 200, 400, 900, 200, 2]);
