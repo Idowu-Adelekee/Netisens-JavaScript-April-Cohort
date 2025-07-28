@@ -46,26 +46,114 @@ const restaurant = {
   },
 };
 
-// map Method
-const moneyMovementsUSD = [2000, 4000, -3500, 9000, -200, 1300];
+// STRING METHODS
+// The indexOf, the lastIndexOf method
+// The slice method
+// toLowerCase();
+// toUpperCase();
+// replace
+// includes
+// startsWith and endsWith
+// split
+// join
 
-const dollarRate = 1600;
+const oduduFullname = "Odudu Inemesit Essien";
+const godlyFirstname = "godLy godwin gift";
+
+const capitalizedName = function (name) {
+  const names = name.toLowerCase().split(" ");
+
+  const correctName = [];
+  for (const firstword of names) {
+    correctName.push(firstword[0].toUpperCase() + firstword.slice(1));
+  }
+
+  console.log(correctName.join(" "));
+};
+
+capitalizedName("goDly phIlip umOren"); // Godly Philip Umoren
+capitalizedName(godlyFirstname); // Godly Philip Umoren
+capitalizedName("Idowu AdEdotun MichaeL adeleke noble"); // Godly Philip Umoren
+
+const number = 1234;
+const name = "Big fish";
+const allOfThem = name + number;
+console.log(allOfThem);
+
+const myString = "You are loved";
+const myNumber = 3898;
+
+console.log(String(myNumber));
+
+console.log(myNumber + "");
+
+// const oduduFullname = "Odudu Inemesit Essien";
+// const godlyFirstname = "uodly uodwin uift";
+
+// INDEX
+// console.log(name[0]);
+// console.log(name[5]);
+
+// // INDEXOF AND LASTINDEXOF
+// console.log(name.indexOf("O"), name.indexOf("Odudu"));
+// console.log(name.lastIndexOf("d"));
+
+// SLICE
+// const firstName = fullname.slice(0, 5);
+// console.log(firstName);
+
+// TOLOWERCASE AND TOUPPERCASE
+// console.log(firstName.toLowerCase());
+// console.log(firstName.toUpperCase());
+
+// REPLACE
+// console.log(godlyFirstname.replace("u", "G"));
+// console.log(godlyFirstname.replaceAll("u", "G"));
+// console.log(godlyFirstname.replace("uodly", "Godly"));
+
+// console.log(oduduFullname.includes("odudu"));
+// console.log(oduduFullname.startsWith("Odudu"));
+
+// console.log(oduduFullname.split(" ", 2));
+
+// const joshuaFullname = ["Joshua", "Ubongabasi"];
+
+// console.log(joshuaFullname.join(" "));
+
+// Exercise
+// const capitalizedName = function (name) {
+
+// };
+
+// console.log("goDly phIlip umoren");
+
+// map Method
+// const moneyMovementsUSD = [2000, 4000, -3500, 9000, -200, 1300];
+
+// const max = moneyMovementsUSD.reduce((acc, val) => {
+//   if (acc > val) return acc;
+//   else return val;
+// }, moneyMovementsUSD[0]);
+
+// console.log(max);
+
+// const dollarRate = 1600;
 
 // const nairaMovements = moneyMovementsUSD.map(function (mov, i) {
 //   return mov * dollarRate;
 // });
-const nairaMovements = moneyMovementsUSD.map((mov, i) => mov * dollarRate);
+// const nairaMovements = moneyMovementsUSD.map((mov, i) => mov * dollarRate);
 
-console.log(nairaMovements);
+// console.log(nairaMovements);
 
-const depositMovements = moneyMovementsUSD.filter((mov) => mov < 0);
-console.log(depositMovements);
+// const depositMovements = moneyMovementsUSD.filter((mov) => mov < 0);
+// console.log(depositMovements);
 
-const allMovements = moneyMovementsUSD.reduce(function (acc, mov, i, arr) {
-  return acc + mov;
-});
+// const allMovements = moneyMovementsUSD.reduce(function (acc, mov, i, arr) {
+//   return acc + mov;
+// });
 
-console.log(allMovements);
+// console.log(allMovements);
 
 // Assignment: Use the reduce method to find the biggest number in the moneyMovementsUSD array
 
