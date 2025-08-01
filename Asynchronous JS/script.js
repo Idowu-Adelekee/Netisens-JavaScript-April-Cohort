@@ -1,4 +1,7 @@
-"use strictt";
+"use strict";
+
+// const countriesContainer = document.querySelector(".countries");
+// const btn = document.querySelector(".btn-country");
 
 // console.log("check in ");
 
@@ -31,49 +34,126 @@
 //     console.log(data);
 //   });
 
-const containerEl = document.querySelector(".countries");
-console.log(containerEl);
+// const containerEl = document.querySelector(".countries");
+// console.log(containerEl);
 
-const getCountryData = function (countryName) {
-  const response = fetch(`https://restcountries.com/v2/name/${countryName}`)
-    .then(function (lewis) {
-      return lewis.json();
-    })
-    .then(function (chizzy) {
-      console.log(chizzy[0]);
-      const [country] = chizzy;
-      // const country = chizzy[0];
-      console.log(country);
+// setTimeout(function () {
+//   console.log("Two seconds have passed");
+// }, 2000);
 
-      const html = `
+// console.log("Hello August");
+// const thisYear = [
+//   "January",
+//   "February",
+//   "March",
+//   "April",
+//   "May",
+//   "June",
+//   "July",
+//   "August",
+//   ["others"],
+// ];
+
+// console.log(thisYear);
+
+// const response = fetch(`https://dummyjson.com/recipes
+// `)
+//   .then(function (result) {
+//     console.log(result);
+//     return result.json();
+//   })
+//   .then(function (data) {
+//     console.log(data);
+//   });
+
+const countriesContainer = document.querySelector(".countries");
+const btn = document.querySelector(".btn-country");
+
+const displayCountry = function (country) {
+  const countryData = `
      <article class="country">
           <img class="country__img" src="${country.flag}" />
           <div class="country__data">
             <h3 class="country__name">${country.name}</h3>
             <h4 class="country__region">${country.region}</h4>
-            <p class="country__row"><span>👫</span>${country.population} people</p>
-            <p class="country__row"><span>🗣️</span>${country.languages[0].name}</p>
-            <p class="country__row"><span>💰</span>${country.currencies[0].code}</p>
+            <p class="country__row"><span>👫</span>${Math.trunc(
+              country.population / 1000000
+            )}m people</p>
+            <p class="country__row"><span>🗣️</span>${
+              country.languages[0].name
+            }</p>
+            <p class="country__row"><span>💰</span>${
+              country.currencies[0]?.code
+            }</p>
           </div>
         </article>
     `;
-
-      containerEl.insertAdjacentHTML("afterbegin", html);
-    });
+  countriesContainer.insertAdjacentHTML("beforeend", countryData);
+  countriesContainer.style.opacity = 1;
 };
 
-// getCountryData("nigeria");
-// getCountryData("usa");
-// getCountryData("portugal");
-// getCountryData("canada");
-// g
-getCountryData("japan");
-getCountryData("china");
-getCountryData("india");
-getCountryData("pakistan");
-getCountryData("russia");
-getCountryData("zimbabwe");
-getCountryData("benin");
+// const getCountryData = function (countryName) {
+//   const response = fetch(`https://restcountries.com/v2/name/${countryName}`)
+//     .then((result) => result.json())
+//     .then((data) => {
+//       const [country] = data;
+//       displayCountry(country);
+//     })
+//     .catch(function (error) {
+//       console.log(error);
+//       // alert(error.message);
 
-console.log(response);
-console.log("first of all");
+//       countriesContainer.insertAdjacentText(
+//         "beforeend",
+//         `Something went wrong ${error.message}`
+//       );
+//     })
+//     .finally(() => (countriesContainer.style.opacity = 1));
+// };
+
+// getCountryData("nigeria");
+
+// btn.addEventListener("click", function () {
+//   getCountryData("china");
+// });
+
+const getCountryData = async function (countryName) {
+  try {
+    const response = await fetch(
+      `https://restcountries.com/v2/name/${countryName}`
+    );
+    console.log(response);
+    // if (!response.ok) {
+    //   throw new Error();
+    // }
+
+    const data = await response.json();
+    console.log(data);
+    const [country] = data;
+
+    const dummyPost = await fetch(`https://dummyjson.com/recipes`);
+    const dummyResult = await dummyPost.json();
+    console.log(dummyResult);
+
+    displayCountry(country);
+  } catch (error) {
+    console.error(`Something went wrong ${error.message}`);
+  }
+};
+
+btn.addEventListener("click", function () {
+  getCountryData("nigeria");
+});
+
+// console.log("Hello August");
+
+// const y = 3;
+// let x = 2;
+// y = 1;
+// try {
+//   const y = 3;
+//   let x = 2;
+//   y = 1;
+// } catch (err) {
+//   console.error(`Something went wrong ${err.message}`);
+// }
