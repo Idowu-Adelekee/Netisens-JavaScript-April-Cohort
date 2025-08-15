@@ -330,3 +330,8 @@ overall(newAccounts);
 // We should be store the account somewhere (localStorage) so we can retrieve after deletion
 
 // 3. How to the Solution
+
+// 1. Learn more about function, call, apply and bind method.
+// 2. Learn about this keyword
+// 3. Watch on OOP
+// 4. Learn on DOM Manipulation: Dom traversing, event types and event propagation
